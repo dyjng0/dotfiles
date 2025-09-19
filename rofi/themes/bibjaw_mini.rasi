@@ -1,0 +1,130 @@
+/**
+ * ROFI Color theme
+ * User: Habib
+ * Copyright: JuJu Ashbe !!
+*/
+
+* {
+    dark:#282828;
+    red:#cc241d;
+    red-alt:#fb4934;
+    orange:#d65d0e;
+    yellow: #d79921;
+    blue:#458588;
+    green:#98971a;
+    aqua: #689d6a;
+    cream:#fbf1c7;
+    grey:#a89984;
+    dark-grey:#282828;
+    transparent:#00000000;
+    highlight:underline bold #d65d0e;
+
+    padding:0;
+    margin:0;
+    border:0;
+    border-radius:0;
+    spacing:0;
+    vertical-align: 0.5;
+
+    text-color: @cream;
+    border-color:@orange;
+    background-color:@transparent;
+
+    font:"Iosevka Nerd Font Bold 14";
+}
+
+configuration {
+    display-drun: " Apps ";
+    display-run: " Cmd: ";
+    display-window: " Win : ";
+}
+
+window {
+    width: 25%;
+    location: center;
+    background-color: @dark;
+    orientaion: horizontal;
+}
+
+mainbox {
+    children: [inputbar, message,listview];
+}
+
+inputbar {
+    margin: 8px 8px 3px 8px;
+    background-color: @orange;
+    children: [prompt,entry];
+}
+
+prompt {
+    padding: 5px;
+    margin: 2px;
+    background-color: @dark;
+    text-color: @cream;
+    font:"Iosevka Nerd Font Bold 14";
+}
+
+entry {
+    padding:5px;
+    margin:2px;
+    border-color:@grey;
+    background-color:@dark-grey;
+    text-color:@cream;
+    font:"Iosevka Nerd Font Bold 14";
+}
+
+listview {
+    lines:10;
+    padding:8px;
+    border: 2px;
+    margin:8px;
+    background-color:@dark-grey;
+    children:[element];
+}
+element {
+    padding:2px;
+}
+
+element-text {
+    size:1em;
+    padding:4px;
+    margin:0px;
+    text-color:inherit;
+}
+
+element-icon{
+    padding:4px;
+    margin:1px;
+    size:1em;
+}
+
+element selected {
+    background-color: @yellow;
+    text-color: @dark;
+}
+
+element selected active {
+    background-color: @red-alt;
+}
+
+message {
+    expand:true;
+    background-color: @dark-grey;
+    children: [textbox];
+}
+
+
+textbox {
+    expand: true;
+    padding:3px;
+    background-color:@red-alt;
+    text-color:@dark-grey;
+}
+
+error-message {
+    expand: true;
+    border: 2px;
+    padding:5px;
+    background-color: @dark-grey;
+    text-color:@dark;
+}

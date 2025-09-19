@@ -1,0 +1,43 @@
+# =====================
+# Gruvbox Dark Zathura
+# =====================
+
+# Default UI colors
+
+# Document recolor (dark mode for PDFs)
+set recolor "true"
+set recolor-keephue "true"
+set recolor-lightcolor "#282828"  # text
+set recolor-darkcolor  "#fbf1c7"  # background
+
+set default-bg "#282828"
+
+set statusbar-visible false
+set guioptions none
+
+set highlight-active-color "#ffffff"
+set highlight-transparency 1
+
+#  
+#  # Statusbar
+#  set statusbar-bg "#3c3836"
+#  set statusbar-fg "#ebdbb2"
+#  
+#  # Inputbar
+#  set inputbar-bg "#3c3836"
+#  set inputbar-fg "#ebdbb2"
+#  
+#  # Notifications
+#  set notification-bg "#3c3836"
+#  set notification-fg "#ebdbb2"
+#  set notification-error-bg "#cc241d"   # red
+#  set notification-error-fg "#fbf1c7"   # light fg
+#  set notification-warning-bg "#d79921" # yellow
+#  set notification-warning-fg "#282828" # dark bg
+#  
+#  # Recolor mode (document colors)
+#  set recolor "true"
+#  set recolor-keephue "true"
+#  set recolor-lightcolor "#ebdbb2"  # text
+#  set recolor-darkcolor  "#282828"  # background
+#  
