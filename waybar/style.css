@@ -47,19 +47,19 @@ workspaces {
 }
 
 #workspaces button:hover {
-  background: #d65d0e;
+  background: #458588;
 }
 
 #workspaces button.visible {
-  background: #fe8019;
+  background: #83a598;
 }
 
 #workspaces button.visible:hover {
-  background: #fe8019;
+  background: #83a598;
 }
 
 #workspaces button.active {
-  background: #fe8019;
+  background: #83a598;
 }
 
 #workspaces button.urgent {
@@ -90,6 +90,7 @@ workspaces {
   border-radius: 3px;
 }
 
+#custom-external-ip,
 #custom-rofi,
 #clock,
 #battery,
@@ -112,6 +113,16 @@ workspaces {
   color: #ffffff;
 }
 
+#custom-external-ip {
+  color: #fbf1c7;
+  background: #282828;
+  padding: 0 4px;
+  margin: 0px 3px;
+  min-width: 25px;
+  border: 3px solid #1d2021;
+  border-radius: 3px;
+}
+
 #custom-rofi {
   color: #fbf1c7;
   background: #282828;
@@ -125,8 +136,7 @@ workspaces {
 #clock {
   padding-left: 0px;
   padding-right: 4px;
-  font-weight: 800;
-  color: #b8bb26;
+  color: #fbf1c7;
   background: #282828;
   border: 3px solid #1d2021;
   border-radius: 3px;
@@ -138,21 +148,21 @@ workspaces {
   border: 3px solid #1d2021;
   border-radius: 3px;
   background: #282828;
-  color: #d3869b;
+  color: #fbf1c7;
   background: #282828;
 }
 
 #battery.charging,
 #battery.plugged {
-  color: #b8bb26;
+  color: #fbf1c7;
 }
 
 #battery.critical {
-  color: #fb493f;
+  color: #fbf1c7;
 }
 
 #battery.warning {
-  color: #fe8019;
+  color: #fbf1c7;
 }
 
 #power-profiles-daemon {
@@ -185,7 +195,7 @@ label:focus {
   border: 3px solid #1d2021;
   border-radius: 3px;
   background-color: #282828;
-  color: #fe8019;
+  color: #fbf1c7;
 }
 
 #memory {
@@ -194,7 +204,7 @@ label:focus {
   border: 3px solid #1d2021;
   border-radius: 3px;
   background-color: #282828;
-  color: #b8bb26;
+  color: #fbf1c7;
 }
 
 #disk {
@@ -203,7 +213,7 @@ label:focus {
   border: 3px solid #1d2021;
   border-radius: 3px;
   background-color: #282828;
-  color: #fb4934;
+  color: #fbf1c7;
 }
 
 #backlight {
@@ -212,7 +222,7 @@ label:focus {
   border: 3px solid #1d2021;
   border-radius: 3px;
   background-color: #282828;
-  color: #8ec07c;
+  color: #fbf1c7;
 }
 
 #network {
@@ -229,7 +239,7 @@ label:focus {
   border: 3px solid #1d2021;
   border-radius: 3px;
   background-color: #282828;
-  color: #83a598;
+  color: #fbf1c7;
 }
 
 #pulseaudio.muted {
@@ -238,7 +248,7 @@ label:focus {
   border: 3px solid #1d2021;
   border-radius: 3px;
   background-color: #282828;
-  color: #fb4934;
+  color: #fbf1c7;
 }
 
 #wireplumber {

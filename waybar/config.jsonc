@@ -8,30 +8,35 @@
   // Choose the order of the modules
   "modules-left": [
     "custom/rofi",
-    "sway/workspaces",
-    "sway/window",
-    "tray"
+    "sway/workspaces"
   ],
+  // sway/window
+  // tray
   "modules-center": [
     "clock"
   ],
   "modules-right": [
-    "disk",
-    "cpu",
-    "temperature",
-    "memory",
     "backlight",
     "pulseaudio",
-    "battery",
-    "power-profiles-daemon"
+    "battery"
   ],
+  // "custom/external-ip",
+  // cpu
+  // temperature
+  // memory
+  // "backlight",
+
   // Modules configuration
   "custom/rofi": {
-    "format": "",
+    "format": "",
     "on-click": "rofi -show drun -disable-history -show-icons",
     "on-click-right": "~/.config/waybar/power.sh",
     "escape": true,
     "tooltip": false
+  },
+  "custom/external-ip": {
+    "exec": "curl -s ifconfig.me",
+    "format": "<span color='#282828' bgcolor='#83a598' > 󰩟 </span> {}",
   },
   "sway/workspaces": {
     "disable-scroll": true,
@@ -123,19 +128,20 @@
   },
   "clock": {
     "timezone": "America/New_York",
-    "format": "<span color='#282828' bgcolor='#b8bb26' >  </span> {:%a %d %b %I:%M %p}",
+    "format": "<span color='#282828' bgcolor='#83a598' >  </span> {:%a %d %b %I:%M %p}",
     "interval": 1,
-    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    "tooltip": false
   },
+  // "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
   "cpu": {
-    "format": "<span color='#282828' bgcolor='#fe8019' >  </span> {usage}%",
+    "format": "<span color='#282828' bgcolor='#83a598' >  </span> {usage}%",
     "tooltip": false,
     "interval": 1
   },
   "memory": {
     "interval": 2,
     "tooltip": false,
-    "format": "<span color='#282828' bgcolor='#b8bb26' >  </span> {}%"
+    "format": "<span color='#282828' bgcolor='#83a598' >  </span> {}%"
   },
   "temperature": {
     "tooltip": false,
@@ -147,10 +153,10 @@
   },
   "backlight": {
     // "device": "acpi_video1",
-    "format": "<span color='#282828' bgcolor='#8ec07c' > 󰞏 </span> {percent}%",
+    "format": "<span color='#282828' bgcolor='#83a598' > 󰞏 </span> {percent}%",
     "tooltip": false
   },
-  "battery": {
+    "battery": {
     "interval": 1,
     "states": {
       "good": 99,
@@ -169,18 +175,18 @@
       "󰂂",
       "󰁹"
     ],
-    "format": "<span color='#282828' bgcolor='#d3869b' > {icon} </span> {capacity}%",
+    "format": "<span color='#282828' bgcolor='#83a598' > {icon} </span> {capacity}%",
     "format-critical": "<span color='#282828' bgcolor='#fb4934' > {icon} </span> {capacity}%!!",
     "format-warning": "<span color='#282828' bgcolor='#fe8019' > {icon} </span> {capacity}%",
-    "format-full": "<span color='#282828' bgcolor='#fb4934' > {icon} </span> {capacity}%",
+    "format-full": "<span color='#282828' bgcolor='#83a598' > {icon} </span> {capacity}%",
     "format-charging": "<span color='#282828' bgcolor='#b8bb26' > 󰂅 </span> {capacity}%",
     "format-charging-warning": "<span color='#282828' bgcolor='#b8bb26' > 󰢝 </span> {capacity}%",
     "format-charging-critical": "<span color='#282828' bgcolor='#b8bb26' > 󰢜 </span> {capacity}%",
     "format-plugged": "<span color='#282828' bgcolor='#b8bb26' > 󰂅 </span> {capacity}%",
-    "format-alt": "<span color='#282828' bgcolor='#d3869b' > 󱧥 </span> {time}",
-    "tooltip": true
+    "format-alt": "<span color='#282828' bgcolor='#83a598' > 󱧥 </span> {time}",
+    "tooltip": false 
   },
-  "battery#bat2": {
+    "battery#bat2": {
     "bat": "BAT2"
   },
   "power-profiles-daemon": {
@@ -238,7 +244,7 @@
     }
   },
   "disk": {
-    "format": "<span color='#282828' bgcolor='#fb4934' >  </span> {free}",
+    "format": "<span color='#282828' bgcolor='#83a598' >  </span> {free}",
     "interval": 20,
     "tooltip": false
   }
