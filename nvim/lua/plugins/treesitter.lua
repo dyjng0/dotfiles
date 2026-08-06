@@ -10,6 +10,9 @@ return {
       ensure_installed = {
         "bibtex",
         "latex",
+        "c",
+        "cpp",
+        "cmake",
       },
     })
   end,
