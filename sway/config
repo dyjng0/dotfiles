@@ -21,7 +21,8 @@ set $menu rofi -show drun -show-icons
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg ~/Pictures/wallpaper.jpg fit
+output * bg ~/Pictures/wallpapers/gtr-sunset.jpg fill
+# output * bg ~/Pictures/wallpaper.jpg fit
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
@@ -32,15 +33,26 @@ output * bg ~/Pictures/wallpaper.jpg fit
 #
 # Example configuration:
 #
-
-exec swayidle -w \
-         timeout 300 'swaylock' \
-         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock'
-
-bindsym $mod+p exec swaylock
-# bindsym $mod+p exec swaylock
+### Idle configuration
 #
+### Idle configuration
+# exec swayidle -w \
+#          timeout 480 'swaylock' \
+#          timeout 600 'swaymsg "output * dpms off"' \
+#          resume 'swaymsg "output * dpms on"' \
+#          timeout 1200 'systemctl suspend' \
+#          before-sleep 'swaylock'
+exec swayidle -w \
+         timeout 480 'swaylock -f -c 000000' \
+         timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+         before-sleep 'swaylock -f -c 000000'
+
+# Manual lock
+bindsym $mod+p exec swaylock
+
+# bindswitch --reload --locked lid:on exec swaylock, output * dpms off
+# bindswitch --reload --locked lid:off output * dpms on
+
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
@@ -73,7 +85,7 @@ bindsym $mod+p exec swaylock
     bindsym $mod+d exec $menu
 
     # Start search engine
-    bindsym $mod+b exec librewolf
+    bindsym $mod+b exec brave-browser
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -232,7 +244,7 @@ bindsym $mod+r mode "resize"
 # }
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #98971a #98971a #fbf1c7 #98971a   #98971a
+client.focused          #458588 #458588 #fbf1c7 #458588   #458588
 client.focused_inactive #282828 #282828 #fbf1c7 #282828   #282828
 client.unfocused        #282828 #282828 #fbf1c7 #282828   #282828
 client.urgent           #2f343a #900000 #ffffff #900000   #900000
@@ -247,18 +259,16 @@ input "type:keyboard" {
 
 # trackpoint sensitivity
 input "2:10:TPPS/2_IBM_TrackPoint" {
-    accel_profile "flat"
     pointer_accel 0.2
-}
-
-input "1739:0:Synaptics_TM3276-022" {
-    pointer_accel 0
+    accel_profile flat
 }
 
 
-input "type:pointer" {
-    pointer_accel 0
-    accel_profile "flat"
+input type:touchpad {
+    tap enabled
+    pointer_accel 0.3
+    accel_profile adaptive
+    dwt true
 }
 
 # Brightness keys
@@ -276,11 +286,13 @@ exec_always {
     pgrep waybar || waybar
 }
 
+exec_always --no-startup-id sh -c 'sleep 1; pgrep -x lxpolkit >/dev/null || lxpolkit >/dev/null 2>&1 &'
+
 input * repeat_delay 200
 # input * repeat_rate 25
 
 
 # opacity
-for_window [class=".*"] opacity 0.95
+# for_window [class=".*"] opacity 0.95
 
 include /etc/sway/config.d/*
